@@ -58,50 +58,65 @@
 // 1) Understanding the problem
 // - With 2 arrays, should we implement functionality
 
-// 2) Breaking up into sub-problems
-// - Merge 2 arrays
+// // 2) Breaking up into sub-problems
+// // - Merge 2 arrays
 
-const measureKelvin = function () {
-  const measurement = {
-    type: "temp",
-    unit: "celsius",
+// const measureKelvin = function () {
+//   const measurement = {
+//     type: "temp",
+//     unit: "celsius",
 
-    // C) FIX
-    // value: Number(prompt("Degress celsius:")),
-    value: 10,
-  };
+//     // C) FIX
+//     // value: Number(prompt("Degress celsius:")),
+//     value: 10,
+//   };
 
-  // B) FIND
-  console.table(measurement);
+//   // B) FIND
+//   console.table(measurement);
 
-  console.log(measurement.value);
-  // console.warn(measurement.value);
-  // console.error(measurement.value);
+//   console.log(measurement.value);
+//   // console.warn(measurement.value);
+//   // console.error(measurement.value);
 
-  const kelvin = measurement.value + 273;
-  return kelvin;
-};
-// A) IDENTIFY
-console.log(measureKelvin());
+//   const kelvin = measurement.value + 273;
+//   return kelvin;
+// };
+// // A) IDENTIFY
+// console.log(measureKelvin());
 
-// Using a debugger
-const calcTempAmplitudeBug = function (t1, t2) {
-  const temps = t1.concat(t2);
+// // Using a debugger
+// const calcTempAmplitudeBug = function (t1, t2) {
+//   const temps = t1.concat(t2);
 
-  let max = temps[0];
-  let min = temps[0];
+//   let max = temps[0];
+//   let min = temps[0];
 
-  for (let i = 0; i < temps.length; i++) {
-    const curTemp = temps[i];
+//   for (let i = 0; i < temps.length; i++) {
+//     const curTemp = temps[i];
 
-    debugger;
-    if (curTemp > max) max = curTemp;
-    if (curTemp < min) min = curTemp;
+//     debugger;
+//     if (curTemp > max) max = curTemp;
+//     if (curTemp < min) min = curTemp;
+//   }
+//   console.log(max, min);
+//   return max - min;
+// };
+
+// const amplitudeBug = calcTempAmplitudeBug([3, 5, 1], [9, 4, 5]);
+
+// console.log(amplitudeBug);
+
+const data1 = [17, 21, 23];
+const data2 = [12, 5, -5, 0, 4];
+
+console.log(`... ${data1[0]} C ... ${data1[1]} C ... ${data1[2]} C ...`);
+
+const printForecast = function (arr) {
+  let str = "";
+
+  for (let i = 0; i < arr.length; i++) {
+    str = `${arr[i]}C in ${i + 1} days ...`;
   }
-  console.log(max, min);
-  return max - min;
+  console.log("..." + str);
 };
-
-const amplitudeBug = calcTempAmplitudeBug([3, 5, 1], [9, 4, 5]);
-
-console.log(amplitudeBug);
+printForecast(data1);
